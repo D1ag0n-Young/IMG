@@ -1,7 +1,7 @@
 # 前言
 这是祥云杯2021的一道pwn题，题目看起来简单，很多人做出来了，但是我看了分析了半天找到了可疑的地方，没找到漏洞点，后来才发现就是一个很简单的任意地址写（可以通过格式化字符串来写），当时看到先read(buf),又scanf(buf),就觉得很奇怪为什么read完之后又scanf，后来看了writup后恍然大悟，发现这不就是通过read输入（格式化）数据，然后通过scanf任意地址写吗？找到了漏洞点后面就可以展开分析了。
 # 题目分析
-题目链接：
+[题目链接](https://github.com/1094093288/IMG/tree/master/Pwn/PwnAttachment/xiangyunbei2021)
 这个题目同样保护全开，题目给了libc-2.23.so，Ubuntu16.04的环境，先看一下程序功能：
 1. add 输入size和content，输出当前chunk的地址。
 2. say 也就是漏洞点的地方，read输入长度为64的字符，然后scanf可以输入buf，但此时的buf并不是一个承接输入的指针，而是相当于scanf的第一个参数格式化字符串处理，当read(buf)输入的是'%n$s'的时候就会当成格式化字符串处理，从而实现任意地址写，所以当buf不是格式化字符串的时候会出现异常情况。
@@ -297,6 +297,6 @@ if __name__ == "__main__":
     sh.close()
     log.success('The flag is ' + re.search(r'flag{.+}', flag).group())
 ```
-exp链接：
+[exp链接](https://github.com/1094093288/IMG/blob/master/Pwn/PwnWriteup/xiangyunbei2021/exp.py)
 # 总结
 这道题目通过一个read和scanf实现了任意地址写的漏洞，没有free功能，通过house of orange来free掉top chunk，从而泄露libc，覆盖malloc_hook为onegadget获取shell，不幸的是所有的onegadget都成功不了，那就用realloc_hook来调整栈帧的rsp指向，通过malloc_hook->__GI___libc_realloc->realloc_hook->onegadget的调用链得到可以成功getshell的条件，成功获取shell。经过这道题我体会到了onegadget失效后的解决方法以及house of orange的练习，还需继续学习啊^-^
