@@ -52,11 +52,11 @@ edit(heap_base + 0x110, 'b' * 8 + p64(0xef1))
 ```
 确定偏移如下,定位到scanf地方，找到想要覆盖的地址，通过fmtarg确定偏移：
 
-![](assets/1.png)
+![](https://github.com/1094093288/IMG/blob/master/Pwn/PwnWriteup/xiangyunbei2021/assets/1.png)
 
 可以看到read读入`%7$s%7$s`+p64(0x55b718f8b110)为格式化字符串，后面的0x55b718f8b110为要覆盖的地址，可以看到0x7ffffe920238存的就是栈上要覆盖的地址，确定长度为7，其实一个`%7$s`就行，`%7$s`这里是为了对齐,这里注意只能用格式化字符串填充。当scanf的时候就会向偏移为7的地方，也就是地址0x55b718f8b110处写入数据，这里写入如下:
 
-![](assets/2.png)
+![](https://github.com/1094093288/IMG/blob/master/Pwn/PwnWriteup/xiangyunbei2021/assets/2.png)
 
 可以看到topchunk已经改小了，接下来就是不断申请使得topchunk free到unsorted bin。
 ## free top chunk
@@ -104,17 +104,17 @@ Dump of assembler code for function __GI___libc_realloc:
    0x00007ffff7a9195f <+591>:	mov    rbp,rax
 
 ```
-![](assets/7.png)
+![](https://github.com/1094093288/IMG/blob/master/Pwn/PwnWriteup/xiangyunbei2021/assets/7.png)
 
 可以看到，如下是没有进行栈调整时的rsp+0x30的地方
 
-![](assets/3.png)
+![](https://github.com/1094093288/IMG/blob/master/Pwn/PwnWriteup/xiangyunbei2021/assets/3.png)
 
 当触发onegadget后执行到execve处参数情况，rsi!=0,我们要调整rsp+0x30指向0处，需要将rsp减去 0x7ffdf629fce0-0x7ffdf629fca8 = 0x38 ，刚好需要一个`sub    rsp,0x38`就好，所以指向__GI___libc_realloc+13处来调整栈使rsp+0x30指向0,经过调整栈帧后rsp+0x30处指向了0：
 
-![](assets/4.png)
+![](https://github.com/1094093288/IMG/blob/master/Pwn/PwnWriteup/xiangyunbei2021/assets/4.png)
 
-![](assets/5.png)
+![](https://github.com/1094093288/IMG/blob/master/Pwn/PwnWriteup/xiangyunbei2021/assets/5.png)
 
 此时也成功的获得了shell。
 ```bash
