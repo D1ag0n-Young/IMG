@@ -349,6 +349,7 @@ exec qemu-system-aarch64 -M virt -cpu cortex-a53 -nographic -smp 1 -kernel Image
 3. [gef插件作者编译的gdbserver](https://github.com/hugsy/gdb-static)
 
 其他的rootfs和vmlinux等我编译完后再上传到github，也不知道能不能传👀
+
 **参考**
 1. [buildroot构建MIPS64调试环境](https://www.jianshu.com/p/4faf62335180)
 2. [mips64调试环境搭建](https://ruan777.github.io/2020/08/25/mips64%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/)
