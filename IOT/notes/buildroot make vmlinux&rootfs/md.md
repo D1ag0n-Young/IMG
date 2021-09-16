@@ -348,7 +348,9 @@ exec qemu-system-aarch64 -M virt -cpu cortex-a53 -nographic -smp 1 -kernel Image
 2. [海特实验室编译的gdbserver](https://pan.baidu.com/s/1_Grqzwyf3NOesbWLp6gBKg) 密码:hfab
 3. [gef插件作者编译的gdbserver](https://github.com/hugsy/gdb-static)
 
-其他的rootfs和vmlinux等我编译完后再上传到github，也不知道能不能传👀
+其他的rootfs和vmlinux等我编译完后再上传到github，也不知道能不能传👀 <br>
+-------------------------------------------------------------------- <br>
+编译好啦：放到[百度云盘](链接：https://pan.baidu.com/s/1FkJT8iSS9ZgFVf3hPQrBgw)了,提取码：638w。小瑕疵：arm架构大端的vmlinux没有编译出来，只有rootfs。👀
 
 **参考**
 1. [buildroot构建MIPS64调试环境](https://www.jianshu.com/p/4faf62335180)
