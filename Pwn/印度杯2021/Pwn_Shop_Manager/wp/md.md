@@ -526,4 +526,5 @@ s.interactive()
 1. 通过溢出制造unsorted bin来泄露libc
 2. 通过tcache attack，申请到bss段，结合题目泄露heap、libc
 还有就是当栈溢出长度不够时，考虑将栈迁移到bss或者堆上，具体还要看程序有没有提供修改的功能，如此题程序提供了修改heap的功能，就可以将stack迁移到heap上。<br>
+
 总之收获还是挺多的！！
