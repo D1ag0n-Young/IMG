@@ -1,0 +1,13 @@
+class c547 {
+   public static void main(String[] var0) throws Exception {
+      System.out.print("Paving your way.");
+      pave("");
+   }
+
+   public static void pave(String var0) throws Exception {
+      var0 = var0 + "E";
+      System.out.print(".");
+      Thread.sleep(3600000L);
+      c247.pave(var0);
+   }
+}
