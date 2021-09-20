@@ -1,0 +1,15 @@
+[499 pts] Shop Manager
+Description
+A simple shop simulator
+
+nc 103.152.242.242 39221
+
+Author: prajnapras19
+
+Attachments
+shop-manager-master-public.zip
+
+Hints
+Submission
+Flag
+View solves (4 teams)
