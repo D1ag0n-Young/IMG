@@ -39,7 +39,7 @@ ssize_t sub_400532()
 ```
 栈上的布局：
 
-![](./assets/8.png)
+![](https://github.com/1094093288/IMG/blob/master/Pwn/noleak_stack/assets/8.png)
 
 ## 修改write相关寄存器，触发syscall
 再利用ROP为write函数提供参数，参数为alarm got表地址，用来泄露alarm地址，随后让其返回到alarm plt调用alarm触发syscall实现输出alarm地址。这里有个隐含的点，没有控制rax的ROP，syscall的系统调用号怎么给eax的？这里主要是利用read的返回值，读入几个字符就返回个数几到eax，所以这里读入一字节后eax寄存器就是1，write函数的系统调用号刚好是1，实现了write的syscall
@@ -275,25 +275,25 @@ unsigned __int64 sub_4006A2()
 ```
 可以调试可以看到循环read(buf[i])的时候,i存在buf+0x40处：
 
-![](./assets/9.png)
+![](https://github.com/1094093288/IMG/blob/master/Pwn/noleak_stack/assets/9.png)
 
 可以看到i被存在buf+0x40处，当覆盖到0x40时，可以将i覆盖成0x54，跳过canary，这里0x54选取有一定技巧，刚好跳过canary，且指向buf+0x55(rbp+5)的地方：
 
-![](./assets/10.png)
+![](https://github.com/1094093288/IMG/blob/master/Pwn/noleak_stack/assets/10.png)
 
 此时是没有被覆盖，当再次read时，i就会被覆盖成0x54,跳过canary到buf+0x55的地方
 
-![](./assets/11.png)
+![](https://github.com/1094093288/IMG/blob/master/Pwn/noleak_stack/assets/11.png)
 
 看一下发送的数据
 
-![](./assets/13.png)
+![](https://github.com/1094093288/IMG/blob/master/Pwn/noleak_stack/assets/13.png)
 
 再次执行read会将buf+0x55以及以后的字节覆盖，这里可以使用p32(0x123454),末字节54填充i，剩余0x001234用于填充rbp剩余部分字节对齐.
 ## 泄露put地址，获取libc
 之后填充pop_rdi,put_got,put_plt,main,泄露put地址，拿到libc，然后用同样的方法覆盖返回地址为system拿到shell。
 
-![](./assets/13.png)
+![](https://github.com/1094093288/IMG/blob/master/Pwn/noleak_stack/assets/13.png)
 
 ## 获取shell
 
@@ -310,7 +310,7 @@ unsigned __int64 sub_4006A2()
 ```
 这里得说一下，p64(ret)的作用，system的系统调用要求内存16字节对齐，ret的作用就是对齐。
 
-![](./assets/14.png)
+![](https://github.com/1094093288/IMG/blob/master/Pwn/noleak_stack/assets/14.png)
 
 在没有ret的时候后正常应该在0x7ffd54354818处填充system，但是该地址不对齐，填充一个ret(8字节)，system填充在0x7ffd54354820处，字节对齐，如下
 ```python
