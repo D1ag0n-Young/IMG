@@ -1,0 +1,5 @@
+﻿  chacha20.cpp
+D:\VSworkspace\Hited\Hited\chacha20.cpp(104,12): warning C4477: “printf”: 格式字符串“%08x”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“uint32_t *”
+D:\VSworkspace\Hited\Hited\chacha20.cpp(104,12): warning C4313: “printf”: 格式字符串中的“%x”与“uint32_t *”类型的参数 1 冲突
+D:\VSworkspace\Hited\Hited\chacha20.cpp(138,27): warning C4018: “<”: 有符号/无符号不匹配
+  Hited.vcxproj -> D:\VSworkspace\Hited\x64\Debug\Hited.exe
