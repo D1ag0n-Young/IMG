@@ -1,0 +1,13 @@
+diff --git a/jerry-core/ecma/builtin-objects/ecma-builtin-array-prototype.c b/jerry-core/ecma/builtin-objects/ecma-builtin-array-prototype.c
+index 52b84f89..57064139 100644
+--- a/jerry-core/ecma/builtin-objects/ecma-builtin-array-prototype.c
++++ b/jerry-core/ecma/builtin-objects/ecma-builtin-array-prototype.c
+@@ -729,7 +729,7 @@ ecma_builtin_array_prototype_object_shift (ecma_object_t *obj_p, /**< object */
+ 
+       buffer_p[len - 1] = ECMA_VALUE_UNDEFINED;
+       ecma_delete_fast_array_properties (obj_p, (uint32_t) (len - 1));
+-
++      ecma_delete_fast_array_properties (obj_p, (uint32_t) (len - 2));
+       return ret_value;
+     }
+   }
