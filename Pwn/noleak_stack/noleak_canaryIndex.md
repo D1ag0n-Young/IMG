@@ -376,16 +376,5 @@ if __name__ == '__main__':
     p.sendline(buff)
     p.interactive()
 ```
-## 
-
-
-web1-injection1
-web2-injection2
-web3-file_upload
-web4-file_include
-网络安全 
-上午：injection1 、 secret
-下午：babyof 、try_it、babyRe、misc1、file_upload、file_include
-信息安全
-上午：easy_sql 、 misc2
-下午：magic、misc3、misc4、misc5、misc6、injection2
+# 总结
+以上结合两个例子总结了两种简单基础的栈溢出且没有泄露函数的不同情况的利用方式，其中第一种是比较常用的利用方法。
