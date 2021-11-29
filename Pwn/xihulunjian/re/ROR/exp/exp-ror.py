@@ -39,7 +39,7 @@ for i in range(len(enc)):
 	for j in range(len(table)):
 		if table[j] == enc[i]:
 			tmp.append(j)
-print tmp
+print (tmp)
 
 import z3
 input = [z3.BitVec("p%d" % i,8) for i in range(40)]
@@ -60,47 +60,13 @@ for i in range(0,0x28,8):
         s.add(v5 | v == tmp[i+j])
 sat = s.check()
 m = s.model()
-print m
+flag = []
+for i in range(len(m)):
+	#print (input[i])
+	flag.append(m[input[i]].as_long())
+print (bytes(flag).decode())
 '''
-[p6 = 51,
- p16 = 89,
- p25 = 90,
- p8 = 67,
- p31 = 90,
- p35 = 53,
- p36 = 73,
- p29 = 97,
- p13 = 54,
- p11 = 101,
- p9 = 104,
- p26 = 122,
- p10 = 116,
- p14 = 95,
- p33 = 75,
- p18 = 107,
- p30 = 67,
- p5 = 95,
- p2 = 108,
- p19 = 95,
- p22 = 72,
- p20 = 78,
- p34 = 48,
- p12 = 109,
- p27 = 55,
- p3 = 97,
- p7 = 75,
- p32 = 101,
- p1 = 53,
- p0 = 81,
- p21 = 108,
- p39 = 54,
- p38 = 57,
- p24 = 78,
- p15 = 72,
- p37 = 73,
- p17 = 72,
- p28 = 51,
- p23 = 104,
- p4 = 53]
-flag = Q5la5_3KChtem6_HYHk_NlHhNZz73aCZeK05II96
+[0, 181, 122, 206, 37, 108, 7, 223, 0, 251, 124, 38, 75, 62, 134, 154, 0, 255, 37, 144, 255, 28, 56, 176, 0, 231, 60, 121, 225, 144, 251, 30, 0, 204, 179, 51, 78, 145, 65, 222, 29, 29, 29, 29]
+Q5la5_3KChtem6_HYHk_NlHhNZz73aCZeK05II96
+
 '''
