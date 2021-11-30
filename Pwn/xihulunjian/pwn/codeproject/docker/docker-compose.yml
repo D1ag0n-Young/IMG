@@ -1,0 +1,8 @@
+version: "3"
+services: 
+  code_project: 
+    build: .
+    image: code_project
+    ports: 
+      - "9999"
+    restart: always
