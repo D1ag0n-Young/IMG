@@ -1,0 +1,4 @@
+sudo chroot ./file/ ./pwn 
+
+hint1: 不要太依赖于F5哦。 hint2: 解密算法就是加密算法。
+hint3: 需要在sub_17BB和sub_143A函数去除花指令，使其F5能够正确反编译。
