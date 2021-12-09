@@ -66,7 +66,7 @@ __int64 read_long()
 3. 返回到第一个read地址，此时read的buf = printf@got.plt，修改末12位为onegadget偏移，剩余12为爆破
 4. 后面printf触发onegadget。
 
-爆破长度12位，16*16*8=2048次，实际上爆破长度是16^3
+爆破长度12位，16 * 16 * 8=2048次，实际上爆破长度是16^3
 
 **利用方式二：泄露libc，rop**
 
