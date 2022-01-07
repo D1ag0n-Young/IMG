@@ -2,11 +2,11 @@
 
 白帽子网络安全公开赛在元旦举行了，pwn题目竟然没人做出来，赛后结合官方给出的exp进行了复现，和详细的记录。
 
-# RE -> checkin
+# RE -> checkin (单向算法，Z3,调试)
 
 ## 题目分析
 
-题目是个简单的单项算法，如下：
+题目是个简单的单向算法，如下：
 
 ```c
 int __cdecl main(int argc, const char **argv, const char **envp)
@@ -297,7 +297,7 @@ for i in range(len(t)):
 
 z3的运用。
 
-# RE -> bmzre
+# RE -> bmzre (花指令、古典密码替换)
 
 ## 题目分析
 
@@ -451,7 +451,7 @@ print ('bmzctf{'+flag+'}')
 
 花指令去除，花指令用call代替jmp导致ida分析失败。
 
-# PWN -> goodfile
+# PWN -> goodfile (IOFile、一字节\x00任意写、stdout泄露、stdin任意写)
 
 ## 题目分析
 
@@ -632,5 +632,6 @@ tips：
 2. 结合任意地址写\x00可以实现修改libc地址的末尾为0，结合IOFile泄露，劫持执行流
 3. 环境2.27
 
-## 附件
+# 附件
+
 [附件](https://github.com/1094093288/IMG/tree/master/Pwn/2021BMZCTF)
