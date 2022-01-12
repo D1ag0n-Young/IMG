@@ -1,0 +1,180 @@
+0: const 60 ; <module 'main'> 
+5: module 9 592
+11: const 26 ; 83 
+16: const 27 ; 69 
+21: const 28 ; 65 
+26: array 3
+31: store 0 0
+34: const 30 ; 101 
+39: const 31 ; 108 
+44: const 32 ; 111 
+49: const 33 ; 117 
+54: const 34 ; 122 
+59: const 30 ; 101 
+64: const 35 ; 105 
+69: const 36 ; 98 
+74: const 30 ; 101 
+79: const 31 ; 108 
+84: const 33 ; 117 
+89: const 35 ; 105 
+94: const 37 ; 113 
+99: const 33 ; 117 
+104: const 35 ; 105 
+109: const 37 ; 113 
+114: array 16
+119: store 0 1
+122: const 39 ; 0 
+127: store 0 2
+130: array 0
+135: store 0 3
+138: load 0 2
+141: const 42 ; 256 
+146: lt
+147: jz 184
+152: load 0 3
+155: const 43 ; append 
+160: getattr
+161: load 0 2
+164: call 1
+166: pop
+167: load 0 2
+170: const 44 ; 1 
+175: add
+176: store 0 2
+179: jmp 138
+184: const 39 ; 0 
+189: store 0 4
+192: load 0 4
+195: const 42 ; 256 
+200: lt
+201: jz 271
+206: load 0 3
+209: load 0 4
+212: getitem
+213: load 0 0
+216: load 0 4
+219: const 46 ; 3 
+224: mod
+225: getitem
+226: add
+227: load 0 1
+230: load 0 4
+233: const 47 ; 16 
+238: mod
+239: getitem
+240: add
+241: const 42 ; 256 
+246: mod
+247: load 0 3
+250: load 0 4
+253: setitem
+254: load 0 4
+257: const 44 ; 1 
+262: add
+263: store 0 4
+266: jmp 192
+271: const 39 ; 0 
+276: store 0 5
+279: load 0 5
+282: const 46 ; 3 
+287: lt
+288: jz 448
+293: const 39 ; 0 
+298: store 0 6
+301: load 0 6
+304: const 42 ; 256 
+309: lt
+310: jz 366
+315: load 0 3
+318: load 0 6
+321: getitem
+322: load 0 3
+325: load 0 6
+328: const 44 ; 1 
+333: add
+334: const 42 ; 256 
+339: mod
+340: getitem
+341: bxor
+342: load 0 3
+345: load 0 6
+348: setitem
+349: load 0 6
+352: const 44 ; 1 
+357: add
+358: store 0 6
+361: jmp 301
+366: const 39 ; 0 
+371: store 0 7
+374: load 0 7
+377: const 42 ; 256 
+382: lt
+383: jz 431
+388: load 0 3
+391: load 0 7
+394: getitem
+395: const 44 ; 1 
+400: add
+401: const 42 ; 256 
+406: mod
+407: load 0 3
+410: load 0 7
+413: setitem
+414: load 0 7
+417: const 44 ; 1 
+422: add
+423: store 0 7
+426: jmp 374
+431: load 0 5
+434: const 44 ; 1 
+439: add
+440: store 0 5
+443: jmp 279
+448: const 39 ; 0 
+453: store 0 5
+456: const 39 ; 0 
+461: store 0 8
+464: load 0 5
+467: const 42 ; 256 
+472: lt
+473: jz 509
+478: load 0 8
+481: load 0 3
+484: load 0 5
+487: getitem
+488: add
+489: store 0 8
+492: load 0 5
+495: const 44 ; 1 
+500: add
+501: store 0 5
+504: jmp 464
+509: load 0 8
+512: const 51 ; 20 
+517: mul
+518: const 52 ; 5 
+523: add
+524: store 0 8
+527: load 0 8
+530: const 54 ; 30 
+535: mul
+536: const 52 ; 5 
+541: sub
+542: store 0 8
+545: load 0 8
+548: const 56 ; 40 
+553: mul
+554: const 52 ; 5 
+559: sub
+560: store 0 8
+563: load 0 8
+566: const 58 ; 50 
+571: mul
+572: const 59 ; 6645 
+577: add
+578: store 0 8
+581: const 23 ; <function 'print'> 
+586: load 0 8
+589: call 1
+591: pop
+600:  
