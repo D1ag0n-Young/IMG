@@ -1,0 +1,150 @@
+/*! 
+* @theme cyberpeace
+* @auto-scaling true 
+* @size 16:9 1280px 720px
+* @size 4:3 960px 720px
+*/
+@import 'default';
+
+section {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 3%;
+  height: 720px;
+  width: 1280px;
+  font-size: 10px;
+  display: inline-block;
+  color:rgb(255, 255, 255);
+  background-image: radial-gradient(rgb(88, 87, 86), rgb(20, 20, 20));
+}
+
+p{
+  position: relative;
+  display: block;
+  margin: 0px;
+  font-size: 3rem;
+  height: auto;
+}
+img{
+  position: relative;
+  display: block;
+  width: auto;
+  height : auto;
+  max-height: 500px;
+  max-width: 100%;
+  
+}
+section.head {
+  background-image: radial-gradient(rgb(88, 87, 86), rgb(1, 1, 1));
+  
+}
+
+section.head h1{
+  border-bottom: none;
+  margin-left: 50px;
+  padding-top: 20%;
+  font-size: 5em;
+  color: rgb(237, 233, 233);
+}
+section.dir p strong{
+  color: rgb(255, 255, 255);
+}
+
+section.dir p{
+font-size: 3rem;
+}
+
+section.end   {
+  display: flex;
+  align-items:center;
+  background-image: radial-gradient(rgb(88, 87, 86), rgb(1, 1, 1));
+}
+
+section.end h1  {
+  align-items:center;
+  font-size: 5rem;
+  color: white;
+}
+h1 {
+  padding-top: 20px;
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+  margin-right: 0px;
+}
+
+
+h2 {
+  margin-top: 20px;
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  margin-right: 0px;
+}
+
+
+tr,p,li,ol,pre,ul
+code{
+  font-size: 2.5rem;
+  line-height: 2;
+  white-space:pre-line;
+  word-break: normal;
+  
+}
+span{
+  white-space: pre-line;
+
+}
+ol{
+  padding-left: 30px;
+  white-space:normal;
+}
+
+table {
+    height: auto;
+    font-size: 20px;
+    color: rgb(44, 43, 43);
+    background-image: radial-gradient(rgb(88, 87, 86), rgb(1, 1, 1));
+}
+  
+th {
+    color: rgb(255, 255, 255);
+    background-color: rgb(9, 143, 233);
+}
+
+ul{
+  line-height: 0;
+}
+ul  ul {
+  line-height: 2rem;
+  
+}
+pre,code {
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier,monospace;
+  letter-spacing: 0;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  background-color: rgb(76, 76, 76);
+  display: block;
+	position: relative;
+	text-align: left;
+}
+pre, p,pre[class*="language-"] {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+br{
+  display: none;
+}
+section::after{
+  font-weight: bold;
+  position: fixed;
+  bottom: 7px;
+  right:220px;
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+}
+
+::marker{
+  color: rgb(255, 255, 255);
+}
+
+
