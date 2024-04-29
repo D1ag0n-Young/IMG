@@ -1,0 +1,6 @@
+services:
+  stkbof:
+    build: .
+    image: registry.penguin.0ops.sjtu.cn/sjtuctf2024/stkbof
+    ports:
+      - "1337:1337"

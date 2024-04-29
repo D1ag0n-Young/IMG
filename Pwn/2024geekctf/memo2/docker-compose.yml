@@ -1,0 +1,13 @@
+version: '2.2'
+
+services:
+    pwn:
+        build: ./
+        image: pwn-memo2
+        ports:
+            - "40312:9999"
+        expose:
+            - "9999"
+        pids_limit: 1024
+        cpus: 1
+        restart: unless-stopped
